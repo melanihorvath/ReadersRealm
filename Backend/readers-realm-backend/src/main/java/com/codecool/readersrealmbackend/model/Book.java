@@ -1,6 +1,5 @@
 package com.codecool.readersrealmbackend.model;
 
-import com.codecool.readersrealmbackend.model.User;
 import jakarta.persistence.*;
 
 import java.util.Set;
@@ -20,7 +19,7 @@ public class Book {
     @OneToMany
     private Set<Label> labels;
     @OneToMany
-    private Set<Comment> comments;
+    private Set<Review> reviews;
 
     @OneToMany
     private Set<User> markedAsFavorite;
@@ -100,12 +99,12 @@ public class Book {
         this.labels = labels;
     }
 
-    public Set<Comment> getComments() {
-        return comments;
+    public Set<Review> getReviews() {
+        return reviews;
     }
 
-    public void setComments(Set<Comment> comments) {
-        this.comments = comments;
+    public void setReviews(Set<Review> reviews) {
+        this.reviews = reviews;
     }
 
     public Set<User> getMarkedAsFavorite() {

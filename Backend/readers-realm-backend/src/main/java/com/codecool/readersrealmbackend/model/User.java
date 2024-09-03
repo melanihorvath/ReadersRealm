@@ -27,7 +27,22 @@ public class User {
     @JsonManagedReference
     private Set<Book> readBooks;
 
+    @OneToMany
+    @JsonManagedReference
+    private Set<Book> currentlyReading;
+
+    @OneToMany
+    @JsonManagedReference
+    private Set<Book> toBeRead;
     public User() {
+    }
+
+    public Set<Book> getToBeRead() {
+        return toBeRead;
+    }
+
+    public void setToBeRead(Set<Book> toBeRead) {
+        this.toBeRead = toBeRead;
     }
 
     public long getId() {
@@ -108,6 +123,14 @@ public class User {
 
     public void setReadBooks(Set<Book> readBooks) {
         this.readBooks = readBooks;
+    }
+
+    public Set<Book> getCurrentlyReading() {
+        return currentlyReading;
+    }
+
+    public void setCurrentlyReading(Set<Book> currentlyReading) {
+        this.currentlyReading = currentlyReading;
     }
 }
 

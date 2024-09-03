@@ -3,16 +3,17 @@ package com.codecool.readersrealmbackend.model;
 import jakarta.persistence.*;
 
 @Entity
-public class Comment {
+public class Review {
     @Id
     @GeneratedValue
     private long id;
     @ManyToOne
     @JoinColumn(name = "user_id", nullable = false)
     private User writer;
-    private String comment;
+    private String review;
 
-    public Comment() {
+
+    public Review() {
     }
 
     public long getId() {
@@ -31,11 +32,11 @@ public class Comment {
         this.writer = writer;
     }
 
-    public String getComment() {
-        return comment;
+    public String getReview() {
+        return review;
     }
 
-    public void setComment(String comment) {
-        this.comment = comment;
+    public void setReview(String review) {
+        this.review = review;
     }
 }
